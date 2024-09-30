@@ -11,11 +11,17 @@ jobs:
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Create or update daily log
         run: |
           echo "Daily commit on $(date)" >> daily_log.txt
+          
+      - name: Display current directory and files
+        run: |
+          pwd
+          ls -la
+          cat daily_log.txt || echo "daily_log.txt does not exist"
 
       - name: Commit and Push Changes
         env:
