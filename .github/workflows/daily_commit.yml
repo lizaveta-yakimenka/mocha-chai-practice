@@ -3,7 +3,7 @@ name: Daily Commit
 on:
   workflow_dispatch:  # Allows manual triggering
   schedule:
-    - cron: '*/1 * * * *' 
+    - cron: '44 23 * * *'
 
 jobs:
   daily-commit:
