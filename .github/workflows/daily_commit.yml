@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: '7 15 * * *'  # This runs every day at 3:07 PM UTC
+    - cron: '*/1 * * * *'  # This runs every day at 3:07 PM UTC
 
 jobs:
   daily-commit:
@@ -17,6 +17,8 @@ jobs:
           echo "Daily commit on $(date)" >> daily_log.txt
 
       - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "lizayakimenka@gmail.com"
           git config --local user.name "Lizaveta Yakimenka"
