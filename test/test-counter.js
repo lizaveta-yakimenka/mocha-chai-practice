@@ -1,3 +1,4 @@
+//Testing counter
 const chai = require('chai');
 const expect = chai.expect;
 const createCounter = require('../app/counter');
